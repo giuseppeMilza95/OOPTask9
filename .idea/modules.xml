@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Task9SecondTry.iml" filepath="$PROJECT_DIR$/Task9SecondTry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Task9CallableRunnable.iml" filepath="$PROJECT_DIR$/Task9CallableRunnable.iml" />
     </modules>
   </component>
 </project>

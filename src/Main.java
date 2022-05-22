@@ -74,12 +74,12 @@ public class Main {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
         Future<Double> doubleValues;
         try {
-             doubleValues= executor.submit(myCustomCallable);
+            doubleValues = executor.submit(myCustomCallable);
             System.out.println(doubleValues.get());
 
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }finally {
+        } finally {
             executor.shutdown();
         }
 
@@ -90,19 +90,16 @@ public class Main {
         scorpionFinisherCallable.finisherList.add(() -> System.out.println("Chain Reaction"));
 
 
-
-
         MyCustomCallable subZeroFinisherCallable = new MyCustomCallable();
         subZeroFinisherCallable.finisherList.add(() -> System.out.println("Ice-Cutioner"));
         subZeroFinisherCallable.finisherList.add(() -> System.out.println("Ice-Frozen in Time"));
 
 
-
         try {
-            if (doubleValues.get() >=0.0 && doubleValues.get() >= 0.5){
+            if (doubleValues.get() >= 0.0 && doubleValues.get() >= 0.5) {
                 scorpionFinisherCallable.finisherList.get(new Random().nextInt(scorpionFinisherCallable.finisherList.size())).finishHim();
 
-            }else{
+            } else {
                 subZeroFinisherCallable.finisherList.get(new Random().nextInt(subZeroFinisherCallable.finisherList.size())).finishHim();
             }
         } catch (InterruptedException | ExecutionException e) {
